@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "mike-czyz-website",
-    "public": ".",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
