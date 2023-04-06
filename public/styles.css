@@ -1,13 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;1,400&display=swap');
 
+::selection {
+  background-color: #6e738d;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: scale(97.5%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
 html, body {
   margin: 0;
   height: 100vh;
   background-color: #24273a;
   color: #cad3f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   font-family: 'Schibsted Grotesk', sans-serif;
 }
 
@@ -18,8 +32,122 @@ html, body {
   height: 11in;
   background-color: #363a4f;
   padding: 0.5in;
+  position: relative;
+  animation: 0.4s ease-out 0s 1 fadein;
 }
 
 a {
   color: #7dc4e4;
+  transition: 0.1s color ease-in-out, 0.1s text-decoration ease-in-out;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: #8aadf4;
+  text-decoration: underline;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0.5in;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.5in;
+  width: calc(100% - 1in);
+}
+
+.copyright {
+  text-align: left;
+}
+
+.gpg {
+  text-align: right;
+}
+
+.bio {
+  text-align: justify;
+  display: grid;
+  grid-template-columns: 1fr 2.5in;
+  column-gap: 0.5in;
+}
+
+.avatar {
+  width: 2.5in;
+  height: 2.5in;
+  border-radius: 100%;
+  pointer-events: none;
+}
+
+.pgp-key:hover, .gpg-key:active, .gpg-key:focus {
+  text-decoration: none;
+  transition: 0.1s color ease-in-out, 0.1s text-decoration ease-in-out;
+}
+
+.pgp-key:hover span, .gpg-key:active span, .gpg-key:focus span {
+  text-decoration: underline;
+  transition: 0.1s color ease-in-out, 0.1s text-decoration ease-in-out;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  /* tablets and desktop */
+  .page {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0.25in;
+    box-shadow: none;
+  }
+
+  .footer {
+    margin-top: 0.25in;
+    grid-template-rows: none;
+    grid-template-columns: auto;
+  }
+
+  .copyright {
+    text-align: center;
+  }
+
+  .gpg {
+    text-align: center;
+    grid-row: 1;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /* phones */
+  .page {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0.25in;
+    box-shadow: none;
+  }
+
+  .bio {
+    grid-template-columns: none;
+    grid-template-rows: 2.5in 1fr;
+    place-items: center;
+  }
+
+  .avatar {
+    grid-row: 1;
+  }
+
+  .footer {
+    margin-top: 0.25in;
+    position: static;
+    grid-template-rows: none;
+    grid-template-columns: auto;
+    width: 100%;
+  }
+
+  .copyright {
+    text-align: center;
+  }
+
+  .gpg {
+    text-align: center;
+    grid-row: 1;
+  }
 }
