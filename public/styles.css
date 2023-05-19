@@ -237,6 +237,10 @@ a:focus {
     max-width: 0.25in;
   }
 
+  .theme-text {
+    display: none;
+  }
+
   .copyright {
     text-align: center;
   }
@@ -267,8 +271,12 @@ a:focus {
       "footer";
   }
 
-  .theme:focus, .theme:active {
+  .theme:focus, .theme:active, .theme:hover {
     max-width: 0.25in;
+  }
+
+  .theme-text {
+    display: none;
   }
 
   .bio {
