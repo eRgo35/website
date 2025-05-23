@@ -4,7 +4,7 @@
 
 Your new bare-bones project includes minimal organization with a single `main.rs` file and a few assets.
 
-```
+```bash
 project/
 ├─ assets/ # Any assets that are used by the app should be placed here
 ├─ src/
@@ -13,8 +13,9 @@ project/
 ```
 
 ### Tailwind
-1. Install npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-2. Install the Tailwind CSS CLI: https://tailwindcss.com/docs/installation
+
+1. Install npm: <https://docs.npmjs.com/downloading-and-installing-node-js-and-npm>
+2. Install the Tailwind CSS CLI: <https://tailwindcss.com/docs/installation>
 3. Run the following command in the root of the project to start the Tailwind CSS compiler:
 
 ```bash
@@ -30,7 +31,7 @@ dx serve --platform web
 ```
 
 To run for a different platform, use the `--platform platform` flag. E.g.
+
 ```bash
 dx serve --platform desktop
 ```
-

@@ -8,12 +8,18 @@ edition = "2021"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router", "fullstack"] }
+dioxus-material-icons = "3.0.0"
+dioxus-motion = { version = "0.3.1", optional = true, default-features = false }
 
 [features]
 default = ["web"]
-web = ["dioxus/web"]
-desktop = ["dioxus/desktop"]
-mobile = ["dioxus/mobile"]
+web = ["dioxus/web", "dioxus-motion/web", "dioxus-motion/transitions"]
+desktop = [
+    "dioxus/desktop",
+    "dioxus-motion/desktop",
+    "dioxus-motion/transitions",
+]
+mobile = ["dioxus/mobile", "dioxus-motion/desktop", "dioxus-motion/transitions"]
 
 [profile]
 
