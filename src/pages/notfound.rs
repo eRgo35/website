@@ -1,0 +1,12 @@
+use dioxus::prelude::*;
+
+#[component]
+pub fn PageNotFound(route: Vec<String>) -> Element {
+    rsx! {
+        div {
+            h1 { "Page not found" }
+            p { "We are terribly sorry, but the page you requested doesn't exist." }
+            pre { "log:\nattempted to navigate to: {route:?}" }
+        }
+    }
+}
