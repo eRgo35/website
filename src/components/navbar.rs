@@ -24,6 +24,6 @@ pub fn Navbar() -> Element {
                 }
             }
         }
-        div { class: "content-wrapper", AnimatedOutlet::<Route> {} }
+        div { class: "content-wrapper", {} }
     }
 }

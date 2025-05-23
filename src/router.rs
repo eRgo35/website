@@ -12,7 +12,7 @@ use dioxus_motion::prelude::*;
 #[derive(Debug, Clone, Routable, PartialEq, MotionTransitions)]
 #[rustfmt::skip]
 pub enum Route {
-    #[layout(Navbar)]
+    #[layout(MotionTransitionBuilder)]
         #[route("/")]
         #[transition(Fade)]
         Home {},
@@ -39,4 +39,11 @@ pub enum Route {
     #[end_layout]
     #[route("/:..route")]
     PageNotFound { route: Vec<String> },
+}
+
+#[component]
+pub fn MotionTransitionBuilder() -> Element {
+    rsx! {
+        AnimatedOutlet::<Route> {}
+    }
 }

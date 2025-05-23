@@ -53,8 +53,7 @@ a {
 }
 
 a:hover,
-a:active,
-a:focus {
+a:active {
     color: var(--subtext0)
 }
 
@@ -83,8 +82,7 @@ a:focus {
 }
 
 .navbar-theme:hover,
-.navbar-theme:active,
-.navbar-theme:focus {
+.navbar-theme:active {
     cursor: pointer;
 }
 
