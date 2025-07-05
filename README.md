@@ -2,7 +2,7 @@
 
 A minimalistic, modern personal website.
 
-## 📞 Contact
+## Mike around the web
 
 - **Email**: [mike@c2yz.com](mailto:mike@c2yz.com)
 - **GitHub**: [@eRgo35](https://github.com/eRgo35)
