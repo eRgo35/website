@@ -91,7 +91,7 @@ body {
     box-sizing: border-box;
     width: 8.5in;
     /* height: 11in; */
-    height: 8in;
+    height: 9in;
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: var(--surface);
@@ -149,6 +149,8 @@ a:focus {
 
 .world {
     grid-area: world;
+    display: flex;
+    gap: 0.5em;
 }
 
 .aside {
@@ -165,6 +167,7 @@ a:focus {
     grid-template-columns: 0.3fr 0.7fr;
     column-gap: 0.5in;
     align-self: end;
+    margin-top: 1.5em;
 }
 
 .copyright {
@@ -352,7 +355,7 @@ a:focus {
         box-shadow: none;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.85in 0.2fr 0.4fr auto;
+        grid-template-rows: 0.1fr 0.2fr 0.4fr auto;
         gap: 0px 0px;
         grid-template-areas:
             "header"
@@ -362,6 +365,10 @@ a:focus {
             "footer";
         animation: none;
         overflow: auto;
+    }
+
+    .header {
+        font-size: 2em;
     }
 
     .theme:focus,
@@ -377,7 +384,8 @@ a:focus {
     .bio {
         grid-template-columns: none;
         grid-template-rows: 2.5in 1fr;
-        place-items: center;
+        justify-content: center;
+        align-items: center;
         padding: 0;
     }
 
