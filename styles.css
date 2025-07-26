@@ -1,6 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;1,400&display=swap");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+/* Coiny Regular */
+@font-face {
+  font-family: 'Coiny';
+  src: url('/assets/fonts/Coiny-Regular-subset.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 * {
     transition: background-color 0.15s ease-in-out;
@@ -75,11 +81,11 @@ body {
     width: 100%;
     min-height: 100vh;
     /* height: 100vh; */
+    font-family: system-ui, sans-serif;
     background-color: var(--base);
     color: var(--text);
     display: grid;
     place-items: center;
-    font-family: "Schibsted Grotesk", sans-serif;
     overflow: auto;
     overflow-anchor: none;
 }
@@ -112,7 +118,7 @@ body {
 }
 
 a {
-    color: var(--pine);
+    color: var(--foam);
     transition:
         0.1s color ease-in-out,
         0.1s text-decoration ease-in-out;
@@ -264,7 +270,8 @@ a:focus {
 }
 
 .material-icons {
-    font-family: "Material Icons";
+    font-size: 1.25em;
+    font-style: normal;
 }
 
 .theme-text {
