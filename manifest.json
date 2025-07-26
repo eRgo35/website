@@ -1,6 +1,7 @@
 {
   "short_name": "Mike Czyż",
   "name": "Michał Czyż's Website",
+  "description": "Michał Czyż - software developer, student, and creator.",
   "icons": [
     {
       "src": "assets/favicon.ico",
