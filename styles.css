@@ -400,6 +400,11 @@ a:focus {
         grid-row: 1;
     }
 
+    .small-text {
+        text-align: center;
+        margin: 0.5em 0;
+    }
+
     .footer {
         margin-top: 0.25in;
         position: static;
