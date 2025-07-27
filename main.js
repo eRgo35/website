@@ -2,51 +2,38 @@ const root = document.documentElement;
 const themeText = document.querySelector(".theme-text");
 const themeIcon = document.querySelector(".material-icons");
 
-const isDarkMode = () => root.classList.contains("dark");
-
-const setDarkMode = () => {
-  root.classList.add("dark");
-  themeText.textContent = "Dark Mode";
-  themeIcon.innerHTML = "🌙";
+const THEMES = {
+  light: { class: "", text: "Light Mode", icon: "☀️" },
+  dark: { class: "dark", text: "Dark Mode", icon: "🌙" },
 };
 
-const setLightMode = () => {
-  root.classList.remove("dark");
-  themeText.textContent = "Light Mode";
-  themeIcon.innerHTML = "☀️";
-};
+function updateTheme(mode) {
+  root.classList.toggle("dark", mode === "dark");
+  themeText.textContent = THEMES[mode].text;
+  themeIcon.textContent = THEMES[mode].icon;
+  localStorage.setItem("preferredTheme", mode);
+}
 
-const toggleTheme = () => {
-  if (isDarkMode()) {
-    setLightMode();
-    localStorage.setItem("preferredTheme", "light");
-  } else {
-    setDarkMode();
-    localStorage.setItem("preferredTheme", "dark");
+function getPreferredTheme() {
+  const stored = localStorage.getItem("preferredTheme");
+  if (stored === "dark" || stored === "light") {
+    return stored;
   }
-};
 
-const checkPreferredTheme = () => {
-  const preferredTheme = localStorage.getItem("preferredTheme");
-  if (preferredTheme === "dark") {
-    setDarkMode();
-  } else if (preferredTheme === "light") {
-    setLightMode();
-  } else {
-    const prefersDarkScheme = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    if (prefersDarkScheme) {
-      setDarkMode();
-    } else {
-      setLightMode();
-    }
-  }
-};
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
 
-document.querySelector("#year").innerHTML = new Date().getFullYear();
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js");
+  });
+}
 
-checkPreferredTheme();
+navigator.serviceWorker.addEventListener("controllerchange", () => {
+  console.log("New version available, reloading...");
+  window.location.reload();
+});
 
-const themeButton = document.querySelector(".theme");
-themeButton.addEventListener("click", toggleTheme);
+updateTheme(getPreferredTheme());

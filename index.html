@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/assets/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#8aadf4" />
-    <meta name="description"
-        content="Welcome to the official website of Michał Czyż, a student and a software developer. Explore projects, skills, and contact details." />
+    <meta
+      name="description"
+      content="Welcome to the official website of Michał Czyż, a student and a software developer. Explore projects, skills, and contact details."
+    />
     <meta name="author" content="Michał Czyż" />
     <meta name="copyright" content="Michał Czyż, 2025 All Rights Reserved" />
-    <meta name="keywords" lang="en"
-        content="Michał Czyż, Michael Czyż, Mike Czyż, ai, llm, python, developer, crypto, web, angular, react, javascript" />
+    <meta
+      name="keywords"
+      lang="en"
+      content="Michał Czyż, Michael Czyż, Mike Czyż, ai, llm, python, developer, crypto, web, angular, react, javascript"
+    />
     <meta name="language" content="en" />
     <meta name="robots" content="index, follow" />
     <meta name="date" content="2025-07-26" />
-    <meta name="page-topic" content="Personal Website, Software Developer, Michał Czyż, Mike Czyż" />
+    <meta
+      name="page-topic"
+      content="Personal Website, Software Developer, Michał Czyż, Mike Czyż"
+    />
 
     <!--Facebook Open Graph-->
     <meta property="og:url" content="https://c2yz.com" />
@@ -23,8 +30,10 @@
     <meta property="og:title" content="Michał Czyż - Software Developer" />
     <meta property="og:site_name" content="Michał Czyż" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:description"
-        content="Michał Czyż is a student and software developer. Explore projects, skills, and contact details." />
+    <meta
+      property="og:description"
+      content="Michał Czyż is a student and software developer. Explore projects, skills, and contact details."
+    />
     <meta property="og:image" content="/assets/card.png" />
 
     <!--Twitter card metadata-->
@@ -32,107 +41,308 @@
     <meta name="twitter:site" content="@Mike_Czyz_" />
     <meta name="twitter:creator" content="@Mike_Czyz_" />
     <meta name="twitter:title" content="Michał Czyż - Software Developer" />
-    <meta name="twitter:description"
-        content="Michał Czyż is a student and software developer. Explore projects, skills, and contact details." />
-    <meta name="twitter:image" content="/assets/card.png">
+    <meta
+      name="twitter:description"
+      content="Michał Czyż is a student and software developer. Explore projects, skills, and contact details."
+    />
+    <meta name="twitter:image" content="/assets/card.png" />
 
-    <link rel="apple-touch-icon" href="/assets/logo192.png" />
+    <link
+      rel="apple-touch-icon"
+      href="/assets/logo192.png"
+      media="print"
+      onload="this.media='all'"
+    />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="stylesheet" href="/styles.css" />
 
-    <script src="/main.js" defer></script>
+    <script>
+      (function () {
+        try {
+          var ls = localStorage.getItem("preferredTheme");
+          var theme =
+            ls === "dark" ||
+            (!ls && window.matchMedia("(prefers-color-scheme: dark)").matches)
+              ? "dark"
+              : "light";
+          if (theme === "dark") document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+
+    <style>
+      :root {
+        --base: #faf4ed;
+        --surface: #fffaf3;
+        --text: #575279;
+        --foam: #56949f;
+      }
+      .dark {
+        --base: #191724;
+        --surface: #1f1d2e;
+        --text: #e0def4;
+        --foam: #9ccfd8;
+      }
+      body,
+      html {
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+        font-family: system-ui, sans-serif;
+        background-color: var(--base);
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        overflow: auto;
+        overflow-anchor: none;
+      }
+      .page {
+        box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px 0,
+          rgba(0, 0, 0, 0.23) 0 6px 6px 0;
+        box-sizing: border-box;
+        width: 8.5in;
+        height: 9in;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: var(--surface);
+        padding: 0.5in;
+        position: relative;
+        animation: 0.5s ease-out 0s 1 fadein;
+        display: grid;
+        grid-template-columns: 1fr 2.5in;
+        grid-template-rows: 1.1in 0.2fr 0.4fr auto;
+        gap: 0 0;
+        grid-template-areas: "header header" "bio aside" "world aside" "footer footer";
+        overflow: hidden;
+      }
+
+      .avatar {
+        width: 2.5in;
+        height: 2.5in;
+      }
+
+      a {
+        color: var(--foam);
+        transition: 0.1s color ease-in-out, 0.1s text-decoration ease-in-out;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .bio {
+        grid-area: bio;
+      }
+
+      .world {
+        grid-area: world;
+      }
+
+      .aside {
+        grid-area: aside;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+
+      @media only screen and (min-width: 2000px) {
+        .page {
+          height: 11in;
+        }
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 900px) {
+        html,
+        body {
+          overflow: auto;
+        }
+
+        .page {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0.25in;
+          box-shadow: none;
+          animation: none;
+          overflow: auto;
+        }
+
+        .footer {
+          margin-top: 0.25in;
+          grid-template-rows: none;
+          grid-template-columns: auto;
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        html,
+        body {
+          overflow: auto;
+        }
+
+        .page {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0.25in;
+          box-shadow: none;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 0.1fr 0.2fr 0.4fr auto;
+          gap: 0px 0px;
+          grid-template-areas:
+            "header"
+            "aside"
+            "bio"
+            "world"
+            "footer";
+          animation: none;
+          overflow: auto;
+        }
+      }
+    </style>
+
+    <link
+      rel="preload"
+      href="/assets/fonts/Coiny-Regular-subset.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="/styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
 
     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Michał Czyż",
-          "alternateName": "Mike",
-          "url": "https://c2yz.com/",
-          "jobTitle": "Software Developer, Student",
-          "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "Silesian University of Technology"
-          },
-          "sameAs": [
-            "https://github.com/eRgo35",
-            "https://www.linkedin.com/in/mike-czyz",
-            "https://www.youtube.com/@eRgo35"
-          ]
-        }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Michał Czyż",
+        "alternateName": "Mike",
+        "url": "https://c2yz.com/",
+        "jobTitle": "Software Developer, Student",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Silesian University of Technology"
+        },
+        "sameAs": [
+          "https://github.com/eRgo35",
+          "https://www.linkedin.com/in/mike-czyz",
+          "https://www.youtube.com/@eRgo35"
+        ]
+      }
     </script>
 
     <title>Michał Czyż - Student, Software Developer | Official Website</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <script src="/main.js" defer></script>
     <div class="page">
-        <h1 class="header coiny-regular">
-            Hi, I'm Mike 👋🏻
-        </h1>
+      <h1 class="header coiny-regular">Hi, I'm Mike 👋🏻</h1>
 
-        <div class="bio">
-            <p class="small-text">I'm currently working on new fascinating projects, so be sure to follow me!</p>
-            
-            <h2 class="coiny-regular">Student / Software Developer</h2>
+      <div class="bio">
+        <p class="small-text">
+          I'm currently working on new fascinating projects, so be sure to
+          follow me!
+        </p>
 
-            <p>
-                I am currently pursuing a degree in Computer Science at the Silesian University of Technology in Gliwice. Programming is my passion. I have experience working with a variety of languages. Recently, I have been focusing my attention on Rust and JavaScript. 
-            </p>
-            <p>
-                I am also interested in artificial intelligence and machine learning. In addition, I actively create and develop many projects to further enhance my skills.
-            </p>
+        <h2 class="coiny-regular">Student / Software Developer</h2>
 
-            <h2 class="coiny-regular">My Projects</h2>
-            
-            <a class="button" href="https://github.com/eRgo35?tab=repositories">Go to <i>Projects</i></a>
+        <p>
+          I am currently pursuing a degree in Computer Science at the Silesian
+          University of Technology in Gliwice. Programming is my passion. I have
+          experience working with a variety of languages. Recently, I have been
+          focusing my attention on Rust and JavaScript.
+        </p>
+        <p>
+          I am also interested in artificial intelligence and machine learning.
+          In addition, I actively create and develop many projects to further
+          enhance my skills.
+        </p>
 
-            <!--        
-            <ul>
-                <li>⚙️ I use daily: <code>.rs</code>, <code>.js</code> <code>.py</code> <code>.sh</code> <code>.tex</code> <code>.md</code></li>
-                <li>🍚 Check out my: <a href="https://github.com/eRgo35/dots">dotfiles</a>, <a href="https://github.com/eRgo35/nix-config">nix flake</a></li>
-            </ul> -->
+        <h2 class="coiny-regular">My Projects</h2>
 
-            <h2 class="coiny-regular">Mike around the web</h2>
-            <ul>
-                <li>🐙 take a look at my <a href="https://github.com/eRgo35">GitHub</a></li>
-                <li>💼 find me on <a href="https://www.linkedin.com/in/mike-czyz">LinkedIn</a></li>
-                <li>📹 visit my <a href="https://www.youtube.com/@eRgo35">YouTube</a></li>
-            </ul>
+        <a class="button" href="https://github.com/eRgo35?tab=repositories"
+          >Go to <i>Projects</i></a
+        >
+
+        <h2 class="coiny-regular">Mike around the web</h2>
+        <ul>
+          <li>
+            🐙 take a look at my <a href="https://github.com/eRgo35">GitHub</a>
+          </li>
+          <li>
+            💼 find me on
+            <a href="https://www.linkedin.com/in/mike-czyz">LinkedIn</a>
+          </li>
+          <li>
+            📹 visit my <a href="https://www.youtube.com/@eRgo35">YouTube</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="world">
+        <span>[📎 <a href="/assets/Michał_Czyż_CV.pdf">cv</a>]</span>
+        <span>[📧 <a href=" mailto:mike@c2yz.com?subject=Hi">contact</a>]</span>
+      </div>
+
+      <div class="aside">
+        <div class="avatar-wrapper">
+          <img
+            src="/assets/mike-czyz.webp"
+            class="avatar"
+            alt="Michał Czyż"
+            class="avatar"
+            width="2.5in"
+            height="2.5in"
+            loading="lazy"
+          />
+          <div
+            class="theme"
+            aria-label="Toggle dark/light mode"
+            role="button"
+            tabindex="0"
+          >
+            <i class="material-icons">🌙</i>
+            <span class="theme-text">Dark Mode</span>
+          </div>
+          <script>
+            const themeButton = document.querySelector(".theme");
+            function toggleTheme() {
+              const current = document.documentElement.classList.contains(
+                "dark"
+              )
+                ? "dark"
+                : "light";
+              const newMode = current === "dark" ? "light" : "dark";
+              updateTheme(newMode);
+            }
+            themeButton.addEventListener("click", toggleTheme);
+          </script>
         </div>
+      </div>
 
-        <div class="world">
-            <!-- <p>Also, checkout <a href="https://scientia.c2yz.com">this site</a>. You might find it interesting. 👀</p> -->
-
-            <span>[📎 <a href="/assets/Michał_Czyż_CV.pdf"">cv</a>]</span>
-            <span>[📧 <a href=" mailto:mike@c2yz.com?subject=Hi">contact</a>]</span>
-            <!-- <p>[📧 <a href=" mailto:mike@c2yz.com?subject=Hi">contact</a>]</p> -->
-
-            <!-- <span class="separator">. . .</span> -->
+      <div class="footer">
+        <div class="copyright">&copy; <span id="year">2025</span></div>
+        <script>
+          document.querySelector("#year").innerHTML = new Date().getFullYear();
+        </script>
+        <div class="gpg">
+          <a
+            href="/assets/mike-czyz-public.gpg"
+            target="_blank"
+            class="gpg-key"
+          >
+            🔑
+            <span>GPG</span>
+          </a>
         </div>
-
-        <div class="aside">
-            <div class="avatar-wrapper">
-                <img src="/assets/mike-czyz.webp" class="avatar" alt="Michał Czyż" class="avatar" width="2.5in" height="2.5in" />
-                <div class="theme" aria-label="Toggle dark/light mode" role="button" tabindex="0">
-                    <i class="material-icons">🌙</i>
-                    <span class="theme-text">Dark Mode</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer">
-            <div class="copyright">
-                &copy; <span id="year">2025</span>
-            </div>
-            <div class="gpg">
-                <a href="/assets/mike-czyz-public.gpg" target="_blank" class="gpg-key">
-                    🔑
-                    <span>GPG</span>
-                </a>
-            </div>
-        </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
