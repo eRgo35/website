@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v1-20250727"; // update this on every deploy!
+const CACHE_VERSION = "v1-202507271"; // update this on every deploy!
 const CACHE_NAME = `c2yz-cache-${CACHE_VERSION}`;
 
 const ASSETS_TO_CACHE = [
