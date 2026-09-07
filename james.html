@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>james — case study · Michał Czyż</title>
+        <meta
+            name="description"
+            content="Case study: james — work in progress. james follows the same code style as loom: single-file ES modules, a template-method lifecycle, content in plain HTML."
+        />
+        <meta name="author" content="Michał Czyż" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://c2yz.com/james" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#eef1f6"
+        />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#1a1c26"
+        />
+
+        <meta property="og:url" content="https://c2yz.com/james" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="james — case study · Michał Czyż"
+        />
+        <meta property="og:site_name" content="Michał Czyż" />
+        <meta property="og:locale" content="en_US" />
+        <meta
+            property="og:description"
+            content="Case study: james — work in progress."
+        />
+        <meta property="og:image" content="/card.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@Mike_Czyz_" />
+        <meta name="twitter:title" content="james — case study · Michał Czyż" />
+        <meta
+            name="twitter:description"
+            content="Case study: james — work in progress."
+        />
+        <meta name="twitter:image" content="/card.png" />
+
+        <link
+            rel="preload"
+            href="/assets/fonts/bric-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/assets/fonts/bric-latin-ext.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link rel="stylesheet" href="/assets/styles/main.css" />
+        <script>
+            (() => {
+                try {
+                    const t = localStorage.getItem("preferredTheme");
+                    if (t === "dark" || t === "light") {
+                        document.documentElement.dataset.theme = t;
+                    }
+                } catch (e) {}
+            })();
+        </script>
+        <script type="module" src="/assets/js/main.js"></script>
+    </head>
+
+    <body>
+        <div class="progress" aria-hidden="true"></div>
+
+        <header class="site-head">
+            <div class="wrap">
+                <a class="wordmark" href="/">Michał Czyż</a>
+                <nav class="site-nav" aria-label="Main">
+                    <a href="/loom.html">loom</a>
+                    <a href="/james.html" aria-current="page">james</a>
+                    <a href="/writing.html">writing</a>
+                </nav>
+                <button
+                    class="theme-btn"
+                    type="button"
+                    data-component="theme-toggle"
+                    aria-label="Toggle dark mode"
+                >
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="wrap">
+            <section class="hero">
+                <p class="eyebrow">Case study</p>
+                <h1 aria-label="james">
+                    <span data-split aria-hidden="true">james</span>
+                </h1>
+                <p class="sub">Work in progress — the write-up is on its way.</p>
+            </section>
+
+            <section class="reveal">
+                <h2>The pattern</h2>
+                <p>
+                    james follows the same code style as loom: single-file
+                    per-class ES modules, an abstract base component with a
+                    template-method lifecycle, and content in plain semantic
+                    HTML that reads complete with JavaScript off.
+                </p>
+            </section>
+
+            <section class="reveal">
+                <h2>Full story</h2>
+                <p>
+                    The case study is being finished — the deeper walkthrough
+                    lands here soon.
+                </p>
+            </section>
+        </main>
+
+        <footer class="site-foot">
+            <div class="wrap">
+                <span class="brackets">
+                    <span
+                        >[📎 <a href="/Michał_Czyż_CV.pdf">cv</a>]</span
+                    >
+                    <span>[📧 <a href="mailto:mike@c2yz.com?subject=Hi">contact</a>]</span>
+                    <span>[🔑 <a href="/mike-czyz-public.gpg">gpg</a>]</span>
+                </span>
+                <span>© <span data-year>2026</span> Michał Czyż</span>
+                <span class="hand">built by hand — no frameworks, no build step</span>
+            </div>
+        </footer>
+
+        <div class="toast" hidden>museum of my past self</div>
+    </body>
+</html>

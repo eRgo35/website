@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>loom — case study · Michał Czyż</title>
+        <meta
+            name="description"
+            content="Case study: loom — the component pattern this site is modeled on. Single-file ES modules, a template-method lifecycle, content in plain HTML."
+        />
+        <meta name="author" content="Michał Czyż" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://c2yz.com/loom" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#eef1f6"
+        />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#1a1c26"
+        />
+
+        <meta property="og:url" content="https://c2yz.com/loom" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="loom — case study · Michał Czyż"
+        />
+        <meta property="og:site_name" content="Michał Czyż" />
+        <meta property="og:locale" content="en_US" />
+        <meta
+            property="og:description"
+            content="Case study: loom — the component pattern this site is modeled on."
+        />
+        <meta property="og:image" content="/card.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@Mike_Czyz_" />
+        <meta name="twitter:title" content="loom — case study · Michał Czyż" />
+        <meta
+            name="twitter:description"
+            content="Case study: loom — the component pattern this site is modeled on."
+        />
+        <meta name="twitter:image" content="/card.png" />
+
+        <link
+            rel="preload"
+            href="/assets/fonts/bric-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/assets/fonts/bric-latin-ext.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link rel="stylesheet" href="/assets/styles/main.css" />
+        <script>
+            (() => {
+                try {
+                    const t = localStorage.getItem("preferredTheme");
+                    if (t === "dark" || t === "light") {
+                        document.documentElement.dataset.theme = t;
+                    }
+                } catch (e) {}
+            })();
+        </script>
+        <script type="module" src="/assets/js/main.js"></script>
+    </head>
+
+    <body>
+        <div class="progress" aria-hidden="true"></div>
+
+        <header class="site-head">
+            <div class="wrap">
+                <a class="wordmark" href="/">Michał Czyż</a>
+                <nav class="site-nav" aria-label="Main">
+                    <a href="/loom.html" aria-current="page">loom</a>
+                    <a href="/james.html">james</a>
+                    <a href="/writing.html">writing</a>
+                </nav>
+                <button
+                    class="theme-btn"
+                    type="button"
+                    data-component="theme-toggle"
+                    aria-label="Toggle dark mode"
+                >
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="wrap">
+            <section class="hero">
+                <p class="eyebrow">Case study</p>
+                <h1 aria-label="loom">
+                    <span data-split aria-hidden="true">loom</span>
+                </h1>
+                <p class="sub">The component pattern this site is modeled on.</p>
+            </section>
+
+            <section class="reveal">
+                <h2>The pattern</h2>
+                <p>
+                    loom is built as single-file-per-class ES modules around an
+                    abstract base component with a template-method lifecycle:
+                    <code>mount()</code> runs <code>render()</code>, then
+                    <code>bind()</code>. Subclasses fill in the hooks; the base
+                    class refuses direct instantiation. State stays in private
+                    fields, types live in JSDoc, and larger structures follow
+                    the <code>Block</code>/<code>Sequence</code> pattern.
+                </p>
+                <p>
+                    Content stays in plain semantic HTML — the component layer
+                    attaches behavior, it never generates page markup. With
+                    JavaScript off, the page still reads complete.
+                </p>
+            </section>
+
+            <section class="reveal">
+                <h2>Why it matters</h2>
+                <p>
+                    No frameworks, no build step, no bundler. Every line earns
+                    its place: the code stays readable by a human, and the
+                    deploy stays rsync-simple. This very site borrows the same
+                    pattern for its own component layer.
+                </p>
+            </section>
+
+            <section class="reveal">
+                <h2>Full story</h2>
+                <p>
+                    The deeper walkthrough is still being written — it lands
+                    here soon.
+                </p>
+            </section>
+        </main>
+
+        <footer class="site-foot">
+            <div class="wrap">
+                <span class="brackets">
+                    <span
+                        >[📎 <a href="/Michał_Czyż_CV.pdf">cv</a>]</span
+                    >
+                    <span>[📧 <a href="mailto:mike@c2yz.com?subject=Hi">contact</a>]</span>
+                    <span>[🔑 <a href="/mike-czyz-public.gpg">gpg</a>]</span>
+                </span>
+                <span>© <span data-year>2026</span> Michał Czyż</span>
+                <span class="hand">built by hand — no frameworks, no build step</span>
+            </div>
+        </footer>
+
+        <div class="toast" hidden>museum of my past self</div>
+    </body>
+</html>

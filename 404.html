@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>404 · Michał Czyż</title>
+        <meta name="robots" content="noindex, follow" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#eef1f6"
+        />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#1a1c26"
+        />
+        <link
+            rel="preload"
+            href="/assets/fonts/bric-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/assets/fonts/bric-latin-ext.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link rel="stylesheet" href="/assets/styles/main.css" />
+        <script>
+            (() => {
+                try {
+                    const t = localStorage.getItem("preferredTheme");
+                    if (t === "dark" || t === "light") {
+                        document.documentElement.dataset.theme = t;
+                    }
+                } catch (e) {}
+            })();
+        </script>
+        <script type="module" src="/assets/js/main.js"></script>
+    </head>
+
+    <body>
+        <div class="progress" aria-hidden="true"></div>
+
+        <header class="site-head">
+            <div class="wrap">
+                <a class="wordmark" href="/">Michał Czyż</a>
+                <nav class="site-nav" aria-label="Main">
+                    <a href="/loom.html">loom</a>
+                    <a href="/james.html">james</a>
+                    <a href="/writing.html">writing</a>
+                </nav>
+                <button
+                    class="theme-btn"
+                    type="button"
+                    data-component="theme-toggle"
+                    aria-label="Toggle dark mode"
+                >
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="wrap">
+            <section class="hero notfound">
+                <p class="eyebrow">Not found</p>
+                <h1 aria-label="404">
+                    <span data-split aria-hidden="true">404</span>
+                </h1>
+                <p class="sub">This page wandered off.</p>
+                <p style="margin-block-start: 1.5rem">
+                    <a class="button" data-magnetic href="/">← back home</a>
+                </p>
+            </section>
+        </main>
+
+        <footer class="site-foot">
+            <div class="wrap">
+                <span class="brackets">
+                    <span
+                        >[📎 <a href="/Michał_Czyż_CV.pdf">cv</a>]</span
+                    >
+                    <span>[📧 <a href="mailto:mike@c2yz.com?subject=Hi">contact</a>]</span>
+                    <span>[🔑 <a href="/mike-czyz-public.gpg">gpg</a>]</span>
+                </span>
+                <span>© <span data-year>2026</span> Michał Czyż</span>
+                <span class="hand">built by hand — no frameworks, no build step</span>
+            </div>
+        </footer>
+
+        <div class="toast" hidden>museum of my past self</div>
+    </body>
+</html>
