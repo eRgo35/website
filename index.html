@@ -4,7 +4,16 @@
         <meta charset="utf-8" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#8aadf4" />
+        <meta
+            name="theme-color"
+            content="#f2ecbc"
+            media="(prefers-color-scheme: light)"
+        />
+        <meta
+            name="theme-color"
+            content="#1f1f28"
+            media="(prefers-color-scheme: dark)"
+        />
         <meta
             name="description"
             content="Welcome to the official website of Michał Czyż, a student and a software developer. Explore projects, skills, and contact details."
@@ -29,8 +38,6 @@
         <link
             rel="apple-touch-icon"
             href="/logo192.png"
-            media="print"
-            onload="this.media = 'all'"
         />
         <!--<link rel="manifest" href="/manifest.json" />-->
 
@@ -80,7 +87,7 @@
             type="font/woff2"
             crossorigin
         />
-        <link rel="stylesheet" href="/assets/styles-d7c9f836.css" />
+        <link rel="stylesheet" href="/assets/styles-d7fb9a1b.css" />
 
         <script type="application/ld+json">
             {
@@ -114,7 +121,7 @@
                 data-anim="fade-up"
                 data-anim-delay="100"
             >
-                Hi, I'm Mike 👋🏻
+                Hi, I'm Mike <span aria-hidden="true">👋🏻</span>
             </h1>
 
             <div class="bio">
@@ -169,28 +176,36 @@
                 </h2>
                 <ul data-anim="fade-up" data-anim-delay="700">
                     <li>
-                        🐙 take a look at my
+                        <span aria-hidden="true">🐙</span> take a look at my
                         <a href="https://github.com/eRgo35">GitHub</a>
                     </li>
                     <li>
-                        💼 find me on
+                        <span aria-hidden="true">💼</span> find me on
                         <a href="https://www.linkedin.com/in/mike-czyz"
                             >LinkedIn</a
                         >
                     </li>
                     <li>
-                        📹 visit my
+                        <span aria-hidden="true">📹</span> visit my
                         <a href="https://www.youtube.com/@eRgo35">YouTube</a>
                     </li>
                 </ul>
             </div>
 
             <div class="world" data-anim="fade-up" data-anim-delay="800">
-                <span>[📎 <a href="/Michał_Czyż_CV.pdf">cv</a>]</span>
                 <span
-                    >[📧
-                    <a href=" mailto:mike@c2yz.com?subject=Hi">contact</a
-                    >]</span
+                    ><span aria-hidden="true">[📎 </span
+                    ><a
+                        href="/Michał_Czyż_CV.pdf"
+                        type="application/pdf"
+                        download="Michal_Czyz_CV.pdf"
+                        >cv<span class="sr-only"> (PDF)</span></a
+                    ><span aria-hidden="true">]</span></span
+                >
+                <span
+                    ><span aria-hidden="true">[📧 </span
+                    ><a href="mailto:mike@c2yz.com?subject=Hi">contact</a
+                    ><span aria-hidden="true">]</span></span
                 >
             </div>
 
@@ -227,11 +242,10 @@
                 <div class="gpg">
                     <a
                         href="/mike-czyz-public.gpg"
-                        target="_blank"
                         class="gpg-key"
                     >
-                        🔑
-                        <span>GPG</span>
+                        <span aria-hidden="true">🔑</span>
+                        <span class="gpg-label">GPG</span>
                     </a>
                 </div>
             </div>

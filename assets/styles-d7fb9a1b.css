@@ -7,49 +7,41 @@
     font-display: swap;
 }
 
-/* Rosé Pine Dawn */
+/* Kanagawa Lotus */
 :root {
-    --base: #faf4ed;
-    --surface: #fffaf3;
-    --overlay: #f2e9e1;
-    --muted: #9893a5;
-    --subtle: #797593;
-    --text: #575279;
-    --love: #b4637a;
-    --gold: #ea9d34;
-    --rose: #d7827e;
-    --pine: #286983;
-    --foam: #56949f;
-    --iris: #907aa9;
-    --highlight-low: #f4ede8;
-    --highlight-med: #dfdad9;
-    --highlight-high: #cecacd;
+    --bg: #f2ecbc; /* lotusWhite3 */
+    --fg: #545464; /* lotusInk1, 6.2:1 */
+    --link: #4d699b; /* lotusBlue4, 4.6:1 */
+    --edge: #716e61; /* lotusGray2, control borders, 4.3:1 */
+    --line: #d5cea3; /* lotusWhite0, decorative rules */
+    --selection: #c9cbd1; /* lotusViolet3 */
 
-    /* foam is 3.3:1 on the light base; pine passes AA */
-    --link: var(--pine);
+    /* project-button glow */
+    --red: #c84053;
+    --orange: #e98a00;
+    --yellow: #de9800;
+    --green: #6f894e;
+    --teal: #4e8ca2;
+    --violet: #624c83;
 
     color-scheme: light;
 }
 
-/* Rosé Pine */
+/* Kanagawa Wave */
 .dark {
-    --base: #191724;
-    --surface: #1f1d2e;
-    --overlay: #26233a;
-    --muted: #6e6a86;
-    --subtle: #908caa;
-    --text: #e0def4;
-    --love: #eb6f92;
-    --gold: #f6c177;
-    --rose: #ebbcba;
-    --pine: #31748f;
-    --foam: #9ccfd8;
-    --iris: #c4a7e7;
-    --highlight-low: #21202e;
-    --highlight-med: #403d52;
-    --highlight-high: #524f67;
+    --bg: #1f1f28; /* sumiInk3 */
+    --fg: #dcd7ba; /* fujiWhite, 11.3:1 */
+    --link: #7e9cd8; /* crystalBlue, 5.9:1 */
+    --edge: #727169; /* fujiGray, 3.3:1 */
+    --line: #363646; /* sumiInk5 */
+    --selection: #2d4f67; /* waveBlue2 */
 
-    --link: var(--foam);
+    --red: #e46876;
+    --orange: #ffa066;
+    --yellow: #e6c384;
+    --green: #98bb6c;
+    --teal: #7fb4ca;
+    --violet: #957fb8;
 
     color-scheme: dark;
 }
@@ -71,7 +63,7 @@
 }
 
 ::selection {
-    background-color: var(--overlay);
+    background-color: var(--selection);
 }
 
 :focus-visible {
@@ -123,8 +115,8 @@
 }
 
 html {
-    background-color: var(--base);
-    color: var(--text);
+    background-color: var(--bg);
+    color: var(--fg);
     font-family: system-ui, sans-serif;
     font-size: 100%;
     line-height: 1.6;
@@ -250,13 +242,13 @@ body {
         gap: 1rem;
         margin-top: 3rem;
         padding-top: 1rem;
-        border-top: 1px solid var(--highlight-med);
+        border-top: 1px solid var(--line);
         font-size: 0.9375rem;
 
         .gpg-key {
             text-decoration: none;
 
-            span {
+            .gpg-label {
                 text-decoration: inherit;
                 text-decoration-line: underline;
             }
@@ -266,7 +258,7 @@ body {
     .button {
         display: block;
         padding: 1em 2em;
-        color: var(--text);
+        color: var(--fg);
         text-decoration: none;
         z-index: 0;
         position: relative;
@@ -276,13 +268,13 @@ body {
             content: "";
             background: linear-gradient(
                 45deg,
-                var(--love),
-                var(--gold),
-                var(--rose),
-                var(--pine),
-                var(--foam),
-                var(--iris),
-                var(--love)
+                var(--red),
+                var(--orange),
+                var(--yellow),
+                var(--green),
+                var(--teal),
+                var(--violet),
+                var(--red)
             );
             position: absolute;
             top: -1px;
@@ -294,6 +286,10 @@ body {
             height: calc(100% + 2px);
             animation: glowing 30s linear infinite;
             border-radius: 10px;
+
+            @media (prefers-reduced-motion: reduce) {
+                animation: none;
+            }
         }
 
         &:after {
@@ -301,7 +297,7 @@ body {
             content: "";
             position: absolute;
             inset: 0;
-            background: var(--base);
+            background: var(--bg);
             border-radius: 10px;
         }
     }
@@ -318,9 +314,9 @@ body {
         height: 2.5rem;
         padding: 0 0.6rem;
         overflow: hidden;
-        background-color: var(--base);
-        color: var(--text);
-        border: 1px solid var(--subtle);
+        background-color: var(--bg);
+        color: var(--fg);
+        border: 1px solid var(--edge);
         border-radius: 999px;
         font: inherit;
         cursor: pointer;
