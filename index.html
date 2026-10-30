@@ -86,7 +86,7 @@
             type="font/woff2"
             crossorigin
         />
-        <link rel="stylesheet" href="/assets/styles-d7fb9a1b.css" />
+        <link rel="stylesheet" href="/assets/styles-a952f93e.css" />
 
         <script type="application/ld+json">
             {
@@ -114,35 +114,74 @@
     </head>
 
     <body>
-        <main class="page" data-anim="fade-up" data-anim-delay="0">
-            <h1
-                class="header coiny-regular"
-                data-anim="fade-up"
-                data-anim-delay="100"
-            >
-                Hi, I'm Mike <span aria-hidden="true">👋🏻</span>
-            </h1>
+        <main class="page">
+            <div class="intro">
+                <h1
+                    class="header coiny-regular"
+                    data-anim="fade-up"
+                    data-anim-delay="100"
+                >
+                    Hi, I'm Mike <span aria-hidden="true">👋🏻</span>
+                </h1>
+                <p class="tagline" data-anim="fade-up" data-anim-delay="200">
+                    I'm currently working on new fascinating projects, so be
+                    sure to follow me!
+                </p>
+            </div>
+
+            <div class="aside" data-anim="fade-up" data-anim-delay="300">
+                <div class="avatar-wrapper">
+                    <img
+                        src="/mike-czyz-240.webp"
+                        srcset="/mike-czyz-240.webp 240w, /mike-czyz.webp 512w"
+                        sizes="10rem"
+                        class="avatar"
+                        alt="Michał Czyż"
+                        width="240"
+                        height="240"
+                        fetchpriority="high"
+                    />
+                    <button
+                        type="button"
+                        class="theme"
+                        aria-pressed="false"
+                        hidden
+                    >
+                        <span class="theme-icon" aria-hidden="true">☀️</span>
+                        <span class="theme-text">Dark mode</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="world" data-anim="fade-up" data-anim-delay="300">
+                <span
+                    ><span aria-hidden="true">[📎 </span
+                    ><a href="/Michał_Czyż_CV.pdf" type="application/pdf"
+                        >cv (pdf)</a
+                    ><span aria-hidden="true">]</span></span
+                >
+                <span
+                    ><span aria-hidden="true">[📧 </span
+                    ><a href="mailto:mike@c2yz.com?subject=Hi">mike@c2yz.com</a
+                    ><span aria-hidden="true">]</span></span
+                >
+            </div>
 
             <div class="bio">
-                <p class="small-text" data-anim="fade-up" data-anim-delay="200">
-                    I'm currently working on new fascinating<br />
-                    projects, so be sure to follow me!
-                </p>
-
-                <h2
-                    class="coiny-regular"
+                <p
+                    class="role coiny-regular"
                     data-anim="fade-up"
-                    data-anim-delay="300"
+                    data-anim-delay="400"
                 >
-                    Student · Software Developer
-                </h2>
+                    Student&nbsp;·&nbsp;Software Developer
+                </p>
 
                 <p data-anim="fade-up" data-anim-delay="400">
                     I am currently pursuing a degree in Computer Science at the
                     Silesian University of Technology in Gliwice. Programming is
                     my passion. I have experience working with a variety of
                     languages. Recently, I have been focusing my attention on
-                    Rust and JavaScript.
+                    Rust and&nbsp;JavaScript.
                 </p>
                 <p data-anim="fade-up" data-anim-delay="500">
                     I am also interested in artificial intelligence and machine
@@ -163,7 +202,7 @@
                     href="https://github.com/eRgo35?tab=repositories"
                     data-anim="fade-up"
                     data-anim-delay="600"
-                    >Go to <i>Projects</i></a
+                    >Projects on GitHub <span aria-hidden="true">↗</span></a
                 >
 
                 <h2
@@ -190,76 +229,41 @@
                     </li>
                 </ul>
             </div>
-
-            <div class="world" data-anim="fade-up" data-anim-delay="800">
-                <span
-                    ><span aria-hidden="true">[📎 </span
-                    ><a
-                        href="/Michał_Czyż_CV.pdf"
-                        type="application/pdf"
-                        download="Michal_Czyz_CV.pdf"
-                        >cv<span class="sr-only"> (PDF)</span></a
-                    ><span aria-hidden="true">]</span></span
-                >
-                <span
-                    ><span aria-hidden="true">[📧 </span
-                    ><a href="mailto:mike@c2yz.com?subject=Hi">contact</a
-                    ><span aria-hidden="true">]</span></span
-                >
-            </div>
-
-            <div class="aside" data-anim="fade-up" data-anim-delay="900">
-                <div class="avatar-wrapper">
-                    <img
-                        src="/mike-czyz-240.webp"
-                        srcset="/mike-czyz-240.webp 240w, /mike-czyz.webp 512w"
-                        sizes="10rem"
-                        class="avatar"
-                        alt="Michał Czyż"
-                        width="240"
-                        height="240"
-                        fetchpriority="high"
-                    />
-                    <button
-                        type="button"
-                        class="theme"
-                        aria-pressed="false"
-                        hidden
-                    >
-                        <span class="theme-icon" aria-hidden="true">🌙</span>
-                        <span class="theme-text">Dark mode</span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="footer" data-anim="fade-up" data-anim-delay="1200">
-                <div class="copyright">&copy; <span id="year">2026</span></div>
-                <script>
-                    document.querySelector("#year").innerHTML =
-                        new Date().getFullYear();
-                </script>
-                <div class="gpg">
-                    <a
-                        href="/mike-czyz-public.gpg"
-                        class="gpg-key"
-                    >
-                        <span aria-hidden="true">🔑</span>
-                        <span class="gpg-label">GPG</span>
-                    </a>
-                </div>
-            </div>
         </main>
+
+        <footer class="footer">
+            <div class="copyright">
+                &copy; <span id="year">2026</span> Michał Czyż
+            </div>
+            <script>
+                document.querySelector("#year").textContent =
+                    new Date().getFullYear();
+            </script>
+            <div class="gpg">
+                <a href="/mike-czyz-public.gpg" class="gpg-key">
+                    <span aria-hidden="true">🔑</span>
+                    <span class="gpg-label">GPG</span>
+                </a>
+            </div>
+        </footer>
         <script>
             (() => {
                 const root = document.documentElement;
                 const button = document.querySelector(".theme");
                 const icon = button.querySelector(".theme-icon");
                 const system = window.matchMedia("(prefers-color-scheme: dark)");
+                const chrome = document.querySelectorAll(
+                    'meta[name="theme-color"]',
+                );
 
+                // The icon shows the current mode; aria-pressed says the same.
                 function show(dark) {
                     root.classList.toggle("dark", dark);
                     button.setAttribute("aria-pressed", String(dark));
-                    icon.textContent = dark ? "☀️" : "🌙";
+                    icon.textContent = dark ? "🌙" : "☀️";
+                    for (const meta of chrome) {
+                        meta.content = dark ? "#1f1f28" : "#f2ecbc";
+                    }
                 }
 
                 // Only remember a choice that differs from the system,
